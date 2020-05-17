@@ -20,14 +20,23 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-fprintf('\n size of X: %f \n',ndims(X));
-fprintf('\n size of theta:%f \n',ndims(theta));
-fprintf('\n size of y:%f \n',ndims(y));
+% fprintf('\n size of X: %f \n',X);
+% fprintf('\n size of theta:%f \n',size(theta));
+% fprintf('\n size of y:%f \n',size(y));
 
-J = (1/m)*sum(((-1).*y.*log(X*theta)))
+Z = X*theta;
+S = sigmoid(Z);
+
+J = (1/m)*sum( (-y.*log(S) ) - ( (1-y).*log(1-S)) );
+
+grad =  (1/m).*( X' * (S - y) );
+
+% grad = (1 / m) * (S - y)' * X;
 
 % - ((1-y)*log(1-((theta'.X))))
 
+% h_theta = sigmoid(X*theta);
+% J = (1 / m) * ((-y' * log(h_theta)) - (1 - y)' * log(1 - h_theta));
 
 
 % =============================================================

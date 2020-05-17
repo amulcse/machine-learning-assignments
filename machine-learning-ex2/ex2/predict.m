@@ -15,9 +15,16 @@ p = zeros(m, 1);
 %               You should set p to a vector of 0's and 1's
 %
 
+Z = X*theta;
+p = sigmoid(Z) >= 0.5;
 
-
-
+% for ii = 1:length(p)
+%     if p(ii)>.5
+%        p(ii) = 1;
+%     else
+%         p(ii) = 0;
+%     end
+% end
 
 
 
