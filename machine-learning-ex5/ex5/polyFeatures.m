@@ -15,11 +15,19 @@ X_poly = zeros(numel(X), p);
 %
 % 
 
+m = size(X);
 
+for i=1:m
 
+    pollyfeauture = zeros(p,1);
 
+    for j=1:p
+        pollyfeauture(j) = X(i).^j;
+    end
 
+     X_poly(i, :) = pollyfeauture   ;
 
+end
 % =========================================================================
 
 end
