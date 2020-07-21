@@ -26,16 +26,9 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-% centroidWiseExample = zeros(3,size(idx));
-
-% for i = 1:sizeof(idx)
-%     centroidWiseExample(idx(i)) =  [centroidWiseExample(i,[1:2]) + X(i),centroidWiseExample(idx(i),1)++];
-% end
-
-% centroidWiseExample
-
-
-
+for k=1:K % for-loop over the centroids 
+   centroids(k, :) = mean(X(idx==k, :));
+end  
 % =============================================================
 
 
